@@ -37,6 +37,7 @@ const HomePage = () => {
         borderRadius: "50px",
         boxShadow: 3,
         overflow: "hidden",
+        fontFamily: "IRANSans, sans-serif", // اعمال فونت سفارشی به کل صفحه
         "@media (min-width:600px)": {
           marginTop: "5vh", // در مرکز قرار دادن صفحه در دسکتاپ
         },

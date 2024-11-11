@@ -43,14 +43,18 @@ const ContactSection = () => (
       flexDirection: "column",
       alignItems: "center",
       gap: 1,
-      padding: 1,
-      maxWidth: "400px", // عرض محدود برای جلوگیری از کجی
-      margin: "auto", // تراز کردن مرکز
-      borderRadius: "35px 35px 0 0", // انحنای حلالی بالای بخش
+      padding: "16px",
+      maxWidth: "400px",
+      margin: "auto",
+      borderRadius: { xs: "30px 30px 0 0", sm: "35px 35px 0 0" }, // تغییر مقدار برای موبایل و بزرگتر
       backgroundColor: "#f9fdf9",
       marginTop: "-40px",
-      paddingBottom: "10px",
+      paddingBottom: "20px",
+      paddingTop: "env(safe-area-inset-top)",
       zIndex: 3,
+      "@media (max-width: 600px)": {
+        paddingBottom: "15px",
+      },
     }}
   >
     <PhoneNumberInput />
@@ -61,10 +65,10 @@ const ContactSection = () => (
         color: "#555",
         fontSize: "1rem",
         fontWeight: "bold",
-        marginBottom: "10px", // افزایش فاصله پایین برای فاصله بیشتر از آیکون‌ها
+        marginBottom: "10px",
         textAlign: "center",
-        marginTop: "-15px",
-        fontFamily: "IRANSans, sans-serif", // اعمال فونت سفارشی
+        marginTop: "-10px",
+        fontFamily: "IRANSans, sans-serif",
       }}
     >
       ارتباط با ما
@@ -76,7 +80,10 @@ const ContactSection = () => (
         justifyContent: "center",
         gap: 2,
         width: "100%",
-        marginBottom: "35px",
+        marginBottom: "20px",
+        "@media (max-width: 600px)": {
+          gap: 1,
+        },
       }}
     >
       {icons.map(({ icon, label, key }) => (

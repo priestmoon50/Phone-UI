@@ -10,8 +10,13 @@ const HeaderImage = () => {
         position: "relative",
         height: "450px",
         color: "#fff",
-        borderRadius: "16px 16px 0 0", // گرد کردن گوشه‌های بالایی
+        borderRadius: { xs: "20px 20px 0 0", sm: "16px 16px 0 0" }, // استفاده از مقدار نسبی
         overflow: "hidden",
+        paddingTop: "env(safe-area-inset-top)", // اضافه کردن safe area
+        "@media (max-width: 600px)": {
+          height: "400px",
+          borderRadius: "25px 25px 0 0", // تنظیم مقدار گردی برای موبایل‌های کوچکتر
+        },
       }}
     >
       {/* پس‌زمینه تصویر با لایه تیره */}
@@ -37,66 +42,65 @@ const HeaderImage = () => {
       <Box
         sx={{
           position: "absolute",
-          bottom: 40, // کاهش مقدار برای بالا بردن کل بخش
+          bottom: 40,
           right: 20,
           textAlign: "right",
           zIndex: 3,
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-end",
-          transform: "translateY(-20px)", // بالا بردن به میزان 20 پیکسل
+          transform: "translateY(-20px)",
         }}
       >
-<Box
-  sx={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    width: 90,
-    height: 90,
-    backgroundColor: "#fff",
-    borderRadius: "50%",
-    padding: 1,
-    boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)",
-    mb: 1.5, // فاصله از متن اول
-  }}
->
-  <Avatar
-    src={LogoImage}
-    alt="لوگو سالن زیبایی میناراد"
-    loading="lazy"
-    sx={{ width: 75, height: 75 }}
-  />
-</Box>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: 90,
+            height: 90,
+            backgroundColor: "#fff",
+            borderRadius: "50%",
+            padding: 1,
+            boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)",
+            mb: 1.5,
+          }}
+        >
+          <Avatar
+            src={LogoImage}
+            alt="لوگو سالن زیبایی میناراد"
+            loading="lazy"
+            sx={{ width: 75, height: 75 }}
+          />
+        </Box>
 
-<Typography
-  variant="h3"
-  sx={{
-    fontWeight: "bold",
-    color: "#fff",
-    fontSize: "1.75rem",
-    lineHeight: 1.3,
-    fontFamily: "IRANSans, sans-serif", // اعمال فونت سفارشی
-    mb: 1, // فاصله از متن دوم
-  }}
->
-  سالن زیبایی میناراد
-</Typography>
+        <Typography
+          variant="h3"
+          sx={{
+            fontWeight: "bold",
+            color: "#fff",
+            fontSize: "1.75rem",
+            lineHeight: 1.3,
+            fontFamily: "IRANSans, sans-serif",
+            mb: 1,
+          }}
+        >
+          سالن زیبایی میناراد
+        </Typography>
 
-<Typography
-  variant="h6"
-  sx={{
-    fontWeight: "bold",
-    color: "#ddd",
-    fontSize: "1.12rem",
-    lineHeight: 1.2,
-    mt: "4px",
-    fontFamily: "IRANSans, sans-serif", // اعمال فونت سفارشی
-  }}
->
-  لاین زیبایی
-</Typography>
-
+        <Typography
+          variant="h6"
+          sx={{
+            fontWeight: "bold",
+            color: "#ddd",
+            fontSize: "1.12rem",
+            lineHeight: 1.2,
+            mt: "4px",
+            fontFamily: "IRANSans, sans-serif",
+          }}
+        >
+          لاین زیبایی
+        </Typography>
       </Box>
     </Box>
   );

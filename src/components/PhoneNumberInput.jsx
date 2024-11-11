@@ -17,7 +17,6 @@ const PhoneNumberInput = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // اعتبارسنجی شماره تلفن
   const validatePhoneNumber = (number) => {
     const phoneRegex = /^09[0-9]{9}$/;
     return phoneRegex.test(number);
@@ -44,22 +43,20 @@ const PhoneNumberInput = () => {
 
   return (
     <Box padding="16px" textAlign="center">
-      {/* توضیحات بالای فیلد ورودی */}
       <Typography
         variant="body2"
         gutterBottom
         sx={{
           color: "#555",
-          fontSize: "0.9rem",
+          fontSize: { xs: "0.9rem", sm: "1.1rem" },
           textAlign: "right",
           mb: 1.5,
-          fontFamily: "IRANSans, sans-serif", // اعمال فونت سفارشی
+          fontFamily: "IRANSans, sans-serif",
         }}
       >
         .لطفا برای ادامه شماره تلفن خود را وارد کنید
       </Typography>
 
-      {/* فیلد ورودی شماره تلفن */}
       <TextField
         type="tel"
         variant="outlined"
@@ -76,7 +73,7 @@ const PhoneNumberInput = () => {
               <PhoneIcon sx={{ color: "#9e9e9e" }} />
             </InputAdornment>
           ),
-          sx: { textAlign: "right", fontFamily: "IRANSans, sans-serif" }, // اعمال فونت سفارشی در فیلد ورودی
+          sx: { textAlign: "right", fontFamily: "IRANSans, sans-serif" },
         }}
         sx={{
           backgroundColor: "#F4F4F9",
@@ -86,7 +83,7 @@ const PhoneNumberInput = () => {
             "& input": {
               textAlign: "right",
               padding: "10px 14px",
-              fontFamily: "IRANSans, sans-serif", // اعمال فونت سفارشی در متن ورودی
+              fontFamily: "IRANSans, sans-serif",
             },
             "& fieldset": {
               borderColor: "#e0e0e0",
@@ -102,7 +99,6 @@ const PhoneNumberInput = () => {
         }}
       />
 
-      {/* دکمه ادامه */}
       <Button
         onClick={handleContinue}
         variant="contained"
@@ -114,9 +110,9 @@ const PhoneNumberInput = () => {
           height: "44px",
           borderRadius: "24px",
           fontWeight: "bold",
-          fontSize: "1rem",
+          fontSize: { xs: "0.9rem", sm: "1rem" },
           bgcolor: "#6200ea",
-          fontFamily: "IRANSans, sans-serif", // اعمال فونت سفارشی در دکمه
+          fontFamily: "IRANSans, sans-serif",
           ":hover": {
             bgcolor: "#5b00d6",
           },
