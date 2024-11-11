@@ -50,9 +50,10 @@ const PhoneNumberInput = () => {
         gutterBottom
         sx={{
           color: "#555",
-          fontSize: "1.1rem",
+          fontSize: "0.9rem",
           textAlign: "right",
-          mb: 1.5, // فاصله استاندارد از فیلد ورودی
+          mb: 1.5,
+          fontFamily: "IRANSans, sans-serif", // اعمال فونت سفارشی
         }}
       >
         .لطفا برای ادامه شماره تلفن خود را وارد کنید
@@ -75,7 +76,7 @@ const PhoneNumberInput = () => {
               <PhoneIcon sx={{ color: "#9e9e9e" }} />
             </InputAdornment>
           ),
-          sx: { textAlign: "right" },
+          sx: { textAlign: "right", fontFamily: "IRANSans, sans-serif" }, // اعمال فونت سفارشی در فیلد ورودی
         }}
         sx={{
           backgroundColor: "#F4F4F9",
@@ -85,6 +86,7 @@ const PhoneNumberInput = () => {
             "& input": {
               textAlign: "right",
               padding: "10px 14px",
+              fontFamily: "IRANSans, sans-serif", // اعمال فونت سفارشی در متن ورودی
             },
             "& fieldset": {
               borderColor: "#e0e0e0",
@@ -114,6 +116,7 @@ const PhoneNumberInput = () => {
           fontWeight: "bold",
           fontSize: "1rem",
           bgcolor: "#6200ea",
+          fontFamily: "IRANSans, sans-serif", // اعمال فونت سفارشی در دکمه
           ":hover": {
             bgcolor: "#5b00d6",
           },
@@ -131,4 +134,3 @@ const PhoneNumberInput = () => {
 };
 
 export default PhoneNumberInput;
- 

@@ -59,11 +59,12 @@ const ContactSection = () => (
       variant="body2"
       sx={{
         color: "#555",
-        fontSize: "1.1rem",
+        fontSize: "1rem",
         fontWeight: "bold",
         marginBottom: "10px", // افزایش فاصله پایین برای فاصله بیشتر از آیکون‌ها
         textAlign: "center",
         marginTop: "-15px",
+        fontFamily: "IRANSans, sans-serif", // اعمال فونت سفارشی
       }}
     >
       ارتباط با ما
@@ -75,7 +76,7 @@ const ContactSection = () => (
         justifyContent: "center",
         gap: 2,
         width: "100%",
-         marginBottom: "35px",
+        marginBottom: "35px",
       }}
     >
       {icons.map(({ icon, label, key }) => (
